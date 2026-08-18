@@ -1,0 +1,22 @@
+{
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "X-RDWR-IP": "179.51.102.100",
+    "X-RDWR-PORT": "50930",
+    "X-RDWR-PORT-MM-ORIG-FE-PORT": "443",
+    "X-RDWR-PORT-MM": "443",
+    "X-RDWR-APP-ID": "a70f4406-d05d-4fab-91a9-1e5c4a31dd4b",
+    "x-hash": "7e4096fb761273a416f490d311bb88ae48ece9a3cdcf45212a3aa0143892f2fd",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "00295516-fbaf-4d72-ac3f-9c326c66d33b",
+    "Accept-Encoding": "gzip, deflate, br",
+    "X-Client-IP": "100.64.0.10",
+    "X-Global-Transaction-ID": "f869e99b6a79f05501f8f1a0",
+    "X-RateLimit-Limit": "name=1tps,1;",
+    "X-RateLimit-Remaining": "name=1tps,0;",
+    "Date": "Mon, 10 Aug 2026 15:37:57 GMT",
+    "Content-Encoding": "gzip"
+}

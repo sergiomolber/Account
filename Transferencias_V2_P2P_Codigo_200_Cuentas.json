@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "b692638b-adc3-418f-9559-ff04b878c160",
+    "name": "Transferencias V2  P2P Codigo 200 Cuentas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29460625",
+    "_collection_link": "https://go.postman.co/collection/29460625-b692638b-adc3-418f-9559-ff04b878c160?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Validar la generación de transferencia P2P - Happy path",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// =====================================================\r",
+              "// GENERAR VARIABLES DINÁMICAS\r",
+              "// =====================================================\r",
+              "\r",
+              "// UUID\r",
+              "pm.variables.set(\"dataId\", pm.variables.replaceIn(\"{{$randomUUID}}\"));\r",
+              "\r",
+              "// Número de documento (7 a 10 dígitos)\r",
+              "const longitud = Math.floor(Math.random() * 4) + 7;\r",
+              "\r",
+              "let numero = \"\";\r",
+              "numero += Math.floor(Math.random() * 9) + 1;\r",
+              "\r",
+              "for (let i = 1; i < longitud; i++) {\r",
+              "    numero += Math.floor(Math.random() * 10);\r",
+              "}\r",
+              "\r",
+              "pm.environment.set(\"numeroDocumento\", numero);\r",
+              "\r",
+              "// =====================================================\r",
+              "// FECHA ISO\r",
+              "// =====================================================\r",
+              "\r",
+              "const date = new Date();\r",
+              "\r",
+              "function pad(num, size = 2) {\r",
+              "    return String(num).padStart(size, \"0\");\r",
+              "}\r",
+              "\r",
+              "function getTimeZoneOffset(date) {\r",
+              "    const offset = -date.getTimezoneOffset();\r",
+              "    const sign = offset >= 0 ? \"+\" : \"-\";\r",
+              "    const hours = pad(Math.floor(Math.abs(offset) / 60));\r",
+              "    const minutes = pad(Math.abs(offset) % 60);\r",
+              "\r",
+              "    return `${sign}${hours}:${minutes}`;\r",
+              "}\r",
+              "\r",
+              "const isoDate =\r",
+              "`${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}.${pad(date.getMilliseconds(),3)}${getTimeZoneOffset(date)}`;\r",
+              "\r",
+              "pm.environment.set(\"fecha_actual_formato_iso\", isoDate);\r",
+              "\r",
+              "// =====================================================\r",
+              "// TXID\r",
+              "// =====================================================\r",
+              "\r",
+              "function getFechaActual() {\r",
+              "    const now = new Date();\r",
+              "\r",
+              "    return now.getFullYear().toString() +\r",
+              "        String(now.getMonth() + 1).padStart(2, \"0\") +\r",
+              "        String(now.getDate()).padStart(2, \"0\");\r",
+              "}\r",
+              "\r",
+              "function incrementarId(valor) {\r",
+              "\r",
+              "    const match = valor.match(/(\\d+)$/);\r",
+              "\r",
+              "    if (!match) {\r",
+              "        return valor;\r",
+              "    }\r",
+              "\r",
+              "    const numero = BigInt(match[1]) + 1n;\r",
+              "\r",
+              "    return valor.substring(0, valor.length - match[1].length) +\r",
+              "        numero.toString().padStart(match[1].length, \"0\");\r",
+              "}\r",
+              "\r",
+              "const fecha = getFechaActual();\r",
+              "\r",
+              "let txId = pm.environment.get(\"TxId\") ||\r",
+              "`${fecha}900504003TFY000000000011719`;\r",
+              "\r",
+              "if (!txId.startsWith(fecha)) {\r",
+              "    txId = `${fecha}900504003TFY000000000011719`;\r",
+              "}\r",
+              "\r",
+              "txId = incrementarId(txId);\r",
+              "\r",
+              "pm.environment.set(\"TxId\", txId);\r",
+              "\r",
+              "// =====================================================\r",
+              "// HASH\r",
+              "// =====================================================\r",
+              "\r",
+              "const bodyRaw = pm.variables.replaceIn(pm.request.body.raw);\r",
+              "const body = JSON.parse(bodyRaw);\r",
+              "\r",
+              "const dataString = JSON.stringify(body.data);\r",
+              "const hash = CryptoJS.SHA256(dataString).toString();\r",
+              "\r",
+              "pm.request.headers.upsert({\r",
+              "    key: \"x-hash\",\r",
+              "    value: hash\r",
+              "});\r",
+              "\r",
+              "pm.environment.set(\"x-hash\", hash);\r",
+              "\r",
+              "// =====================================================\r",
+              "// TOKEN\r",
+              "// =====================================================\r",
+              "\r",
+              "pm.sendRequest({\r",
+              "    url: \"https://bank.apihub.crt.achcolombia.com.co/ach/bk/apihub-bank/oauth2/token\",\r",
+              "    method: \"POST\",\r",
+              "    header: {\r",
+              "        \"Content-Type\": \"application/x-www-form-urlencoded\"\r",
+              "    },\r",
+              "    body: {\r",
+              "        mode: \"urlencoded\",\r",
+              "        urlencoded: [\r",
+              "            { key: \"grant_type\", value: \"client_credentials\" },\r",
+              "            { key: \"client_id\", value: pm.environment.get(\"client_id\") },\r",
+              "            { key: \"client_secret\", value: pm.environment.get(\"client_secret\") },\r",
+              "            { key: \"scope\", value: pm.environment.get(\"scope\") }\r",
+              "        ]\r",
+              "    }\r",
+              "}, function (err, res) {\r",
+              "\r",
+              "    if (err) {\r",
+              "        console.log(\"Error al generar token:\", err);\r",
+              "        return;\r",
+              "    }\r",
+              "\r",
+              "    if (res.code === 200) {\r",
+              "        const json = res.json();\r",
+              "        pm.environment.set(\"access_token\", json.access_token);\r",
+              "    } else {\r",
+              "        console.log(\"Error token:\", res.text());\r",
+              "    }\r",
+              "\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let response = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Status code es 201\", function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "// Imprimir el comentario en la consola de Newman\r",
+              "console.log(\"Comentario del caso de prueba: \", pm.iterationData.get(\"Comentario\"));"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "tlsDisabledProtocols": []
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-hash",
+            "value": "{{x-hash}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"meta\": {\r\n        \"requestId\": \"{{$randomUUID}}\",\r\n        \"version\": \"1.0.0\",\r\n        \"timestamp\": \"2026-02-19T20:16:09.001\"\r\n    },\r\n    \"data\": {\r\n        \"movementType\": \"P2P-TRANSFER\",\r\n        \"amountInformation\": {\r\n            \"amount\": 250,\r\n            \"currency\": \"COP\"\r\n        },\r\n        \"source\": {\r\n            \"personType\": \"NATURAL\",\r\n            \"document\": {\r\n                \"number\": \"{{number_source}}\",\r\n                \"type\": \"{{type_source}}\"\r\n            },\r\n            \"firstName\": \"Edward\",\r\n            \"secondName\": \"Felipe\",\r\n            \"firsLastName\": \"Rodriguez\",\r\n            \"secondLastName\": \"Garcia\",\r\n            \"accountInformation\": {\r\n                \"accountId\": \"{{accountId_source}}\",\r\n                \"accountType\": \"{{accountType_source}}\",\r\n                \"financialInstitutionId\": 900504003\r\n            }\r\n        },\r\n        \"target\": {\r\n            \"personType\": \"NATURAL\",\r\n            \"document\": {\r\n                \"number\": \"{{number_target}}\",\r\n                \"type\": \"{{type_target}}\"\r\n            },\r\n            \"firstName\": \"Hernan\",\r\n            \"firsLastName\": \"Sanguino\",\r\n            \"secondLastName\": \"Vega\",\r\n            \"accountInformation\": {\r\n                \"accountId\": \"{{accountId_target}}\",\r\n                \"accountType\": \"{{accountType_target}}\",\r\n                \"financialInstitutionId\": 900504005\r\n            }\r\n        },\r\n         \"purposeInformation\": {\r\n            \"transactionPurpose\": \"{{transactionPurpose}}\"\r\n        },\r\n        \"useCaseInformation\": {\r\n            \"channel\": \"{{channel}}\",\r\n            \"deviceFingerprint\": {\r\n                \"deviceHash\": \"abc123hashdevice\",\r\n                \"ipAddress\": \"192.168.1.10\",\r\n                \"ipLocation\": \"Bogotá\",\r\n                \"ipCountryCode\": \"CO\",\r\n                \"deviceIpRegion\": \"Cundinamarca\",\r\n                \"deviceIsp\": \"Claro\",\r\n                \"deviceModel\": \"iPhone 13\",\r\n                \"latitude\": \"4.60971\",\r\n                \"longitude\": \"-74.08175\",\r\n                \"deviceScreenHeight\": \"2532\",\r\n                \"deviceScreenWidth\": \"1170\",\r\n                \"deviceLanguage\": \"es-CO\",\r\n                \"deviceCookiesEnabled\": \"true\",\r\n                \"deviceUserAgent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)\",\r\n                \"deviceBrowser\": \"Safari\",\r\n                \"deviceBrowserVersion\": \"15.0\",\r\n                \"deviceOs\": \"iOS\"\r\n            }\r\n        }\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/ach/bk/v1/money-movement/transfers",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "ach",
+            "bk",
+            "v1",
+            "money-movement",
+            "transfers"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+﻿number_source,type_source,accountId_source,accountType_source,number_target,type_target,accountId_target,accountType_target,transactionPurpose,channel,Comentario
+{{numeroDocumento}},NIT,20753221513,CAHO,{{numeroDocumento}},CC,2075140125,CCTE,TRANSFERENCIAS,APP,Enviar tipo cuenta CAHO a CCTE
+{{numeroDocumento}},NIT,20753221513,CAHO,{{numeroDocumento}},CC,2075140125,DBMO,TRANSFERENCIAS,APP,Enviar tipo cuenta CAHO a DBMO
+{{numeroDocumento}},NIT,20753221513,CAHO,{{numeroDocumento}},CC,2075140125,DORD,TRANSFERENCIAS,APP,Enviar tipo cuenta CAHO a DORD
+{{numeroDocumento}},NIT,20753221513,CAHO,{{numeroDocumento}},CC,2075140125,DBMI,TRANSFERENCIAS,APP,Enviar tipo cuenta CAHO a DBMI
+{{numeroDocumento}},NIT,20753221513,CCTE,{{numeroDocumento}},CC,2075140125,CAHO,TRANSFERENCIAS,APP,Enviar tipo cuenta CCTE a CAHO
+{{numeroDocumento}},NIT,20753221513,CCTE,{{numeroDocumento}},CC,2075140125,DBMO,TRANSFERENCIAS,APP,Enviar tipo cuenta CCTE a DBMO
+{{numeroDocumento}},NIT,20753221513,CCTE,{{numeroDocumento}},CC,2075140125,DORD,TRANSFERENCIAS,APP,Enviar tipo cuenta CCTE a DORD
+{{numeroDocumento}},NIT,20753221513,CCTE,{{numeroDocumento}},CC,2075140125,DBMI,TRANSFERENCIAS,APP,Enviar tipo cuenta CCTE a DBMI
+{{numeroDocumento}},NIT,20753221513,DBMO,{{numeroDocumento}},CC,2075140125,CAHO,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMO a CAHO
+{{numeroDocumento}},NIT,20753221513,DBMO,{{numeroDocumento}},CC,2075140125,CCTE,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMO a CCTE
+{{numeroDocumento}},NIT,20753221513,DBMO,{{numeroDocumento}},CC,2075140125,DORD,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMO a DORD
+{{numeroDocumento}},NIT,20753221513,DBMO,{{numeroDocumento}},CC,2075140125,DBMI,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMO a DBMI
+{{numeroDocumento}},NIT,20753221513,DORD,{{numeroDocumento}},CC,2075140125,CAHO,TRANSFERENCIAS,APP,Enviar tipo cuenta DORD a CAHO
+{{numeroDocumento}},NIT,20753221513,DORD,{{numeroDocumento}},CC,2075140125,CCTE,TRANSFERENCIAS,APP,Enviar tipo cuenta DORD a CCTE
+{{numeroDocumento}},NIT,20753221513,DORD,{{numeroDocumento}},CC,2075140125,DBMO,TRANSFERENCIAS,APP,Enviar tipo cuenta DORD a DBMO
+{{numeroDocumento}},NIT,20753221513,DORD,{{numeroDocumento}},CC,2075140125,DBMI,TRANSFERENCIAS,APP,Enviar tipo cuenta DORD a DBMI
+{{numeroDocumento}},NIT,20753221513,DBMI,{{numeroDocumento}},CC,2075140125,CAHO,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMI a CAHO
+{{numeroDocumento}},NIT,20753221513,DBMI,{{numeroDocumento}},CC,2075140125,CCTE,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMI a CCTE
+{{numeroDocumento}},NIT,20753221513,DBMI,{{numeroDocumento}},CC,2075140125,DBMO,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMI a DBMO
+{{numeroDocumento}},NIT,20753221513,DBMI,{{numeroDocumento}},CC,2075140125,DORD,TRANSFERENCIAS,APP,Enviar tipo cuenta DBMI a DORD
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},NUIP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->NUIP)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->PPT)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->NIT)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->PEP)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->PAS)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CC->TDI)
+{{numeroDocumento}},CC,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->CC)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},NUIP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->NUIP)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->PPT)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->NIT)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->PEP)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->PAS)
+{{numeroDocumento}},CE,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (CE->TDI)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->CC)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->CE)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->PPT)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->NIT)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->PEP)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->PAS)
+{{numeroDocumento}},NUIP,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NUIP->TDI)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->CC)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->CE)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},NIUP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->NUIP)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->NIT)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->PEP)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->PAS)
+{{numeroDocumento}},PPT,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PPT->TDI)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->CC)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->CE)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},NIUP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->NUIP)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->PPT)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->PEP)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->PAS)
+{{numeroDocumento}},NIT,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (NIT->TDI)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->CC)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->CE)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},NIUP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->NUIP)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->PPT)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->NIT)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},PAS,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->PAS)
+{{numeroDocumento}},PEP,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PEP->TDI)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->CC)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->CE)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},NIUP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->NUIP)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->PPT)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->NIT)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->PEP)
+{{numeroDocumento}},PAS,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (PAS->TDI)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},CC,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->CC)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},CE,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->CE)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},NIUP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->NUIP)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},PPT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->PPT)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},NIT,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->NIT)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},PEP,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->PEP)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar la generación de intents B2P - Happy path (TDI->PAS)
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,COMPRAS,APP,Validar transactionPurpose =COMPRAS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,ANULACIONES,APP,Validar transactionPurpose =ANULACIONES
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar transactionPurpose =TRANSFERENCIAS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,RETIRO,APP,Validar transactionPurpose = RETIRO
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,RECAUDO,APP,Validar transactionPurpose =RECAUDO
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,RECARGAS,APP,Validar transactionPurpose = RECARGAS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,DEPOSITO,APP,Validar transactionPurpose =DEPOSITO
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,NOMINA,APP,Validar transactionPurpose =NOMINA
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,SUBSIDIOS,APP,Validar transactionPurpose =SUBSIDIOS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,PROVEEDORES,APP,Validar transactionPurpose =PROVEEDORES
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,IM,Validar canal = IM
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,POS,Validar canal = POS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,APP,Validar canal = APP
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,ECOMM,Validar canal = ECOMM
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,MPOS,Validar canal = MPOS
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,ATM,Validar canal = ATM
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,CB,Validar canal = CB
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,OFC,Validar canal = OFC
+{{numeroDocumento}},TDI,2075140125,CAHO,{{numeroDocumento}},TDI,20753228543,CCTE,TRANSFERENCIAS,PSE,Validar canal = PSE

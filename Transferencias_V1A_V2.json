@@ -1,0 +1,151 @@
+{
+  "info": {
+    "_postman_id": "dae20021-1f6e-484b-9859-4b4d9087a6ca",
+    "name": "Transferencias v1 a v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36259153",
+    "_collection_link": "https://go.postman.co/collection/36259153-dae20021-1f6e-484b-9859-4b4d9087a6ca?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Transfers V1 a V2",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// GENERAR TOKEN\r",
+              "pm.sendRequest({\r",
+              "    url: 'https://ach-minka-stg.transferenciasinmediatas.com/oauth/token',\r",
+              "    method: 'POST',\r",
+              "    header: {\r",
+              "        'Content-Type': 'application/x-www-form-urlencoded'\r",
+              "    },\r",
+              "    body: {\r",
+              "        mode: 'urlencoded',\r",
+              "        urlencoded: [\r",
+              "            { key: 'grant_type', value: 'client_credentials' },\r",
+              "            { key: 'client_id', value: pm.environment.get(\"client_id\") },\r",
+              "            { key: 'client_secret', value: pm.environment.get(\"client_secret\") },\r",
+              "            { key: 'scope', value: pm.environment.get(\"scope\") }\r",
+              "        ]\r",
+              "    }\r",
+              "}, function (err, res) {\r",
+              " \r",
+              "    if (err) {\r",
+              "        console.log(\"Error al obtener el token:\", err);\r",
+              "        return;\r",
+              "    }\r",
+              " \r",
+              "    console.log(\"Status:\", res.code);\r",
+              "    console.log(\"Respuesta:\", res.text());\r",
+              " \r",
+              "    if (res.code === 200) {\r",
+              "        let json = res.json();\r",
+              "        pm.environment.set(\"access_token\", json.access_token);\r",
+              "        console.log(\"Token generado correctamente.\");\r",
+              "    } else {\r",
+              "        console.log(\"No fue posible generar el token.\");\r",
+              "    }\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let response = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Status code es 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "// Imprimir el comentario en la consola de Newman\r",
+              "console.log(\"Comentario del caso de prueba: \", pm.iterationData.get(\"Comentario\"));\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "<API_KEY>"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0u41}}"
+          },
+          {
+            "key": "Cookie",
+            "value": "visid_incap_3262378=9lKnH4p0ThK5dO3fr5KNQcsUgWkAAAAAQUIPAAAAAABd5XXmL1tLb2FAbGvhUr4s"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"source\": \"cacc:2000208334@7095\",\n    \"target\": \"cacc:789897@7096\",\n    \"amount\": \"100000\",\n    \"symbol\": \"$tin\",\n    \"labels\": {\n        \"type\": \"SEND\",\n        \"domain\": \"tin\",\n        \"description\": \"Prueba A2A\",\n        \"sourceChannel\": \"APP\",\n        \"transactionPurpose\": \"TRANSFER\",\n        \"numberOfTransactions\": \"1\",\n        \"source\": {\n            \"name\": \"FELIPE RODRIGUEZ\",\n            \"proprietary\": \"{{type_source}}\",\n            \"identification\": \"{{identification_source}}\"\n        },\n        \"target\": {\n            \"name\": \"COMERCIALIZADORA GG SAS\",\n            \"proprietary\": \"{{type_target}}\",\n            \"identification\": \"{{identification_target}}\"\n        },\n        \"deviceFingerPrint\": {\n            \"hash\": \"26fff5af6441f8e15a71e8d62c361714484b1b308c99e8eb68ca85e2a7e0dc58\",\n            \"ipAddress\": \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\",\n            \"country\": \"Colombia\",\n            \"city\": \"Bogotá\",\n            \"mobileDevice\": \"990000862471854\",\n            \"SIMCardId\": \"8991101200003204510\",\n            \"model\": \"Huawei Mate 20 Pro\",\n            \"operator\": \"Bharti Airtel Limited\"\n        }\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ach-minka-stg.transferenciasinmediatas.com/v1/transfer",
+          "protocol": "https",
+          "host": [
+            "ach-minka-stg",
+            "transferenciasinmediatas",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "transfer"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_0u41",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0n3g",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0v1l",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_198l",
+      "secret": true
+    }
+  ]
+}

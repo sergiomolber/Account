@@ -1,0 +1,2 @@
+level: warn, messages: Using "CryptoJS" is deprecated. Use "require('crypto-js')" instead.
+level: log, messages: Comentario del caso de prueba: ,Enviar tipo cuenta DBMI a CCTE

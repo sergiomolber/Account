@@ -1,0 +1,5 @@
+type_source,identification_source,type_target,identification_target,Comentario
+CC,891922854,CC,1234990789,Transferencia V1 a V2 P2P
+CC,891922854,NIT,20190976543209,Transferencia V1 a V2 P2B
+NIT,20190976543209,CC,891922854,Transferencia V1 a V2 B2P
+NIT,20190976543209,NIT,20190976543209,Transferencia V1 a V2 B2B

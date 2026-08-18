@@ -1,0 +1,1 @@
+{"meta":{"requestId":"ccd3e879-ecbb-4d7c-9b8c-01872251d538","timestamp":"2026-08-10T15:37:57.856","status":"FAILED","statusCode":"400","statusDesc":"Bad Request"},"errors":[{"code":"1013","detail":"Inconsistencia en datos de la transacción."}]}

@@ -1,0 +1,1 @@
+{"meta":{"requestId":"1b15d9c8-c83b-463d-bb90-4a281b6fb120","version":"1.0.0","timestamp":"2026-08-10T10:35:55.570"},"data":{"id":"1b15d9c8-c83b-463d-bb90-4a281b6fb120","movementType":"P2P-TRANSFER","status":"pending","creationDateTime":"2026-08-10T10:35:55.435"}}

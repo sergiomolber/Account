@@ -1,0 +1,13 @@
+{
+    "x-hash": "b616dac75ed083832afe5374d34543fd3d9bcce0d3a0ce645eecb62496f0f1cb",
+    "Content-Type": "application/json",
+    "Authorization": "Bearer AAIgNjk4YjdmNDAxMTRkM2UzN2M0ZGFkZGI3YzViNDk3MDBajDBN6WfrpCqX6yRe_DbDqRPbFvZE7ypkMs6xCEyRSCtdyaVMh5B2Oh_6uo3v--IoeI5VFZCpCDfoeRHV1KLUvgXV2v1j0c5vmb3BuJ-Y9wPJtLSSIhVTaiFmM1nDCM6xQo11DpY8z1TvsgJmemkJ",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "9c7ff2d0-ff56-45d3-9d0d-812fc12ca51a",
+    "Host": "bank.apihub.crt.achcolombia.com.co",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "2379"
+}

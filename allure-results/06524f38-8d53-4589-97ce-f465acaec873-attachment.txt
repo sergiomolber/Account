@@ -1,0 +1,1 @@
+{"meta":{"requestId":"2842c970-6a4c-43ab-9af6-98d904ae1bbc","timestamp":"2026-08-10T10:39:11.611","status":"FAILED","statusCode":"422","statusDesc":"Inconsistencia en datos de la transaccion."},"errors":[{"code":1013,"detail":"record.schema-invalid: Schema validator error: data.custom.transactionPurpose must be equal to one of the allowed values"}]}

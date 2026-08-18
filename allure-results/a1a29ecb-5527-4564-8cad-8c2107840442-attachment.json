@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "X-Original-HTTP-Status-Code": "201",
+    "Date": "Mon, 10 Aug 2026 15:34:53 GMT",
+    "Strict-Transport-Security": "max-age=31536000",
+    "X-Global-Transaction-ID": "f869e99b6a79ef9d016f20d1",
+    "X-RateLimit-Limit": "name=1tps,1;",
+    "X-RateLimit-Remaining": "name=1tps,0;",
+    "Content-Encoding": "gzip"
+}

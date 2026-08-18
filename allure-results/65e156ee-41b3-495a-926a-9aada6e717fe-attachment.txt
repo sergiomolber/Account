@@ -1,0 +1,1 @@
+{"meta":{"requestId":"beca2420-f292-48cb-a569-7fe834a3631b","timestamp":"2026-08-10T10:39:15.394","status":"FAILED","statusCode":"422","statusDesc":"Inconsistencia en datos de la transaccion."},"errors":[{"code":1013,"detail":"record.schema-invalid: Schema validator error: data.custom.transactionPurpose must be equal to one of the allowed values"}]}

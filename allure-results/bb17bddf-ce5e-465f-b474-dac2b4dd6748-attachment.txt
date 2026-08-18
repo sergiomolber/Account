@@ -1,0 +1,70 @@
+{
+    "meta": {
+        "requestId": "d71db836-a73d-4aa1-8b4f-64cbcd441688",
+        "version": "1.0.0",
+        "timestamp": "2026-02-19T20:16:09.001"
+    },
+    "data": {
+        "movementType": "P2P-TRANSFER",
+        "amountInformation": {
+            "amount": 250,
+            "currency": "COP"
+        },
+        "source": {
+            "personType": "NATURAL",
+            "document": {
+                "number": "286387125",
+                "type": "TDI"
+            },
+            "firstName": "Edward",
+            "secondName": "Felipe",
+            "firsLastName": "Rodriguez",
+            "secondLastName": "Garcia",
+            "accountInformation": {
+                "accountId": "2075140125",
+                "accountType": "CAHO",
+                "financialInstitutionId": 900504003
+            }
+        },
+        "target": {
+            "personType": "NATURAL",
+            "document": {
+                "number": "286387125",
+                "type": "NIT"
+            },
+            "firstName": "Hernan",
+            "firsLastName": "Sanguino",
+            "secondLastName": "Vega",
+            "accountInformation": {
+                "accountId": "20753228543",
+                "accountType": "CCTE",
+                "financialInstitutionId": 900504005
+            }
+        },
+         "purposeInformation": {
+            "transactionPurpose": "TRANSFERENCIAS"
+        },
+        "useCaseInformation": {
+            "channel": "APP",
+            "deviceFingerprint": {
+                "deviceHash": "abc123hashdevice",
+                "ipAddress": "192.168.1.10",
+                "ipLocation": "Bogotá",
+                "ipCountryCode": "CO",
+                "deviceIpRegion": "Cundinamarca",
+                "deviceIsp": "Claro",
+                "deviceModel": "iPhone 13",
+                "latitude": "4.60971",
+                "longitude": "-74.08175",
+                "deviceScreenHeight": "2532",
+                "deviceScreenWidth": "1170",
+                "deviceLanguage": "es-CO",
+                "deviceCookiesEnabled": "true",
+                "deviceUserAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)",
+                "deviceBrowser": "Safari",
+                "deviceBrowserVersion": "15.0",
+                "deviceOs": "iOS"
+            }
+        }
+    }
+}

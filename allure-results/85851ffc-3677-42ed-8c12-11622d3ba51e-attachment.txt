@@ -1,0 +1,133 @@
+// =====================================================
+// GENERAR VARIABLES DINÁMICAS
+// =====================================================
+
+// UUID
+pm.variables.set("dataId", pm.variables.replaceIn("{{$randomUUID}}"));
+
+// Número de documento (7 a 10 dígitos)
+const longitud = Math.floor(Math.random() * 4) + 7;
+
+let numero = "";
+numero += Math.floor(Math.random() * 9) + 1;
+
+for (let i = 1; i < longitud; i++) {
+    numero += Math.floor(Math.random() * 10);
+}
+
+pm.environment.set("numeroDocumento", numero);
+
+// =====================================================
+// FECHA ISO
+// =====================================================
+
+const date = new Date();
+
+function pad(num, size = 2) {
+    return String(num).padStart(size, "0");
+}
+
+function getTimeZoneOffset(date) {
+    const offset = -date.getTimezoneOffset();
+    const sign = offset >= 0 ? "+" : "-";
+    const hours = pad(Math.floor(Math.abs(offset) / 60));
+    const minutes = pad(Math.abs(offset) % 60);
+
+    return `${sign}${hours}:${minutes}`;
+}
+
+const isoDate =
+`${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}.${pad(date.getMilliseconds(),3)}${getTimeZoneOffset(date)}`;
+
+pm.environment.set("fecha_actual_formato_iso", isoDate);
+
+// =====================================================
+// TXID
+// =====================================================
+
+function getFechaActual() {
+    const now = new Date();
+
+    return now.getFullYear().toString() +
+        String(now.getMonth() + 1).padStart(2, "0") +
+        String(now.getDate()).padStart(2, "0");
+}
+
+function incrementarId(valor) {
+
+    const match = valor.match(/(\d+)$/);
+
+    if (!match) {
+        return valor;
+    }
+
+    const numero = BigInt(match[1]) + 1n;
+
+    return valor.substring(0, valor.length - match[1].length) +
+        numero.toString().padStart(match[1].length, "0");
+}
+
+const fecha = getFechaActual();
+
+let txId = pm.environment.get("TxId") ||
+`${fecha}900504003TFY000000000011719`;
+
+if (!txId.startsWith(fecha)) {
+    txId = `${fecha}900504003TFY000000000011719`;
+}
+
+txId = incrementarId(txId);
+
+pm.environment.set("TxId", txId);
+
+// =====================================================
+// HASH
+// =====================================================
+
+const bodyRaw = pm.variables.replaceIn(pm.request.body.raw);
+const body = JSON.parse(bodyRaw);
+
+const dataString = JSON.stringify(body.data);
+const hash = CryptoJS.SHA256(dataString).toString();
+
+pm.request.headers.upsert({
+    key: "x-hash",
+    value: hash
+});
+
+pm.environment.set("x-hash", hash);
+
+// =====================================================
+// TOKEN
+// =====================================================
+
+pm.sendRequest({
+    url: "https://bank.apihub.crt.achcolombia.com.co/ach/bk/apihub-bank/oauth2/token",
+    method: "POST",
+    header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: {
+        mode: "urlencoded",
+        urlencoded: [
+            { key: "grant_type", value: "client_credentials" },
+            { key: "client_id", value: pm.environment.get("client_id") },
+            { key: "client_secret", value: pm.environment.get("client_secret") },
+            { key: "scope", value: pm.environment.get("scope") }
+        ]
+    }
+}, function (err, res) {
+
+    if (err) {
+        console.log("Error al generar token:", err);
+        return;
+    }
+
+    if (res.code === 200) {
+        const json = res.json();
+        pm.environment.set("access_token", json.access_token);
+    } else {
+        console.log("Error token:", res.text());
+    }
+
+});
