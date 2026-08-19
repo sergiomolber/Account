@@ -289,10 +289,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -483,10 +482,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -676,10 +674,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -831,7 +828,11 @@
           "listen": "test",
           "script": {
             "exec": [
-              ""
+              "let response = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -985,10 +986,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -1299,10 +1299,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
               "});\r",
-              "\r",
               "\r",
               ""
             ],
@@ -1565,10 +1564,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -1889,10 +1887,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
@@ -2539,8 +2536,8 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
               "});\r",
               ""
             ],
@@ -6892,10 +6889,9 @@
             "exec": [
               "let response = pm.response.json();\r",
               "\r",
-              "pm.test(\"Status code es 201\", function () {\r",
-              "    pm.response.to.have.status(201);\r",
-              "});\r",
-              ""
+              "pm.test(\"Status code is 200 or 201\", function () {\r",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+              "});"
             ],
             "type": "text/javascript",
             "packages": {},
